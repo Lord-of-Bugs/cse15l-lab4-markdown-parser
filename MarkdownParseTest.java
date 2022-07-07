@@ -83,4 +83,13 @@ public class MarkdownParseTest {
         ArrayList<String> actual = MarkdownParse.getLinks(content);
         assertTrue(expected.equals(actual));
     }
+
+    @Test
+    public void testGetLinks8() throws IOException {
+        Path fileName = Paths.get("/Users/Muchan/Desktop/UCSD-2021-2022/CSE15L/cse15l-lab-reports/cse15l-lab4-markdown-parser/new-test-file.md");
+        String content = Files.readString(fileName);
+        List<String> expected = List.of("wikipedia.com", "this is a link", "this-is-another-link.com");
+        ArrayList<String> actual = MarkdownParse.getLinks(content);
+        assertTrue(expected.equals(actual));
+    }
 }
